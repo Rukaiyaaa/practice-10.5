@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>This is home page</h1>
+    <h1>Author: {{author}}</h1>
+    <h1>Age: {{age}}</h1>
+
+
+
+    <!-- CONDITIONAL STATEMENT -->
+
+    {% if age >= 20 %}
+        <h3>You will get driving license</h3>
+    {% elif age >= 10 and age <= 19 %}
+        <h3>You will not get driving license</h3>
+    {% else %}
+        <h3>You're child</h3>
+    {% endif %}
+
+    {% for i in courses %}
+        <h3>{{i.id}}</h3>
+    {% endfor %}
+
+
+    {% comment %} tempalte filters {% endcomment %}
+
+    <h3>{{list | join:" " }}</h3>
+    <h3>{{ birthday | date:"D d M Y" }}</h3>
+    <h3>{{list | length }}</h3>
+    <h3>{{list | add:2}}</h3>
+    <h3>{{ 'Happy coding. Python is fun' | truncatechars:6 }}</h3>
+    <h3>{{ 'Happy coding. Python is fun' | truncatewords:2 }}</h3>
+    <h3>{{ value | addslashes }}</h3>
+    <h3>{{ author | capfirst }}</h3>
+    <h3>{{ author | center:"15" }}</h3>
+    <h3>{{ value | cut:" " }}</h3>
+    <h3>{{ null | default:"nothing" }}</h3>
+    <h3>{{ courses | dictsort:"name" }}</h3>
+    <h3>{{ a | divisibleby:"3" }}</h3>
+    <h3>{{ b | filesizeformat  }}</h3>
+    <h3>{{ list | first  }}</h3>
+    <h3>{{ list | last  }}</h3>
+    <h3>{{ num | linenumbers  }}</h3>
+    <h3>{{ list | random  }}</h3>
+    <h3>{{ author | make_list }}</h3>
+    {{ list | slice:":2" }}
+    <h3>{{'Humpty Dumpty sat on the Wall' | lower}}</h3>
+    <h3>{{'Humpty Dumpty sat on the Wall' | upper}}</h3>
+    <h3>{{'Django Rest Framework' | title}}</h3>
+    
+    
+
+
+    <h3></h3>
+</body>
+</html>
